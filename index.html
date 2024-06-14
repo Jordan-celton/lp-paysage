@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>LP Paysages</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.png" alt="logo LP Paysages">
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#mes-projets">Mes Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <h1>LP Paysages</h1>
+        <p>LP paysages vous propose ses services pour toutes créations et aménagements extérieurs.</p>
+        <p>Vous souhaitez réaliser le jardin de vos rêves ? Vous ne savez pas par où commencer et le budget nécessaire?</p>
+        <p>Nous sommes là pour ça alors n'hésitez pas à nous contacter pour toutes consultations techniques.</p>
+        <p>Nous serons ravis de vous répondre et d'apporter plus d'expertise à votre projet.</p>
+    </section>
+
+    <section id="a-propos">
+        <h2>À propos</h2>
+        <p>Avec plus de 20 ans d'expérience, LP Paysages est votre partenaire de confiance pour tous vos projets de jardinage et d'aménagement paysager. Nous nous engageons à créer des espaces extérieurs qui reflètent votre vision et votre style.</p>
+    </section>
+
+    <section id="mes-projets" class="content-section">
+        <h2>Mes Projets</h2>
+        <div class="projects">
+            <div class="project">
+                <div class="before-after">
+                    <div class="image-container">
+                        <button class="prev">&#10094;</button>
+                        <img src="./avant-après/Piscine/avant-piscine.jpg" alt="Avant">
+                        <img src="./avant-après/Piscine/avant-piscine2.jpg" alt="Avant">
+                        <img src="./avant-après/Piscine/après-piscine.jpg" alt="Après">
+                        <img src="./avant-après/Piscine/après-piscine3.jpg" alt="Après">
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+                <h3>Aménagement d'une piscine extérieure</h3>
+                <p>Transformation d'un espace urbain en un oasis de verdure.</p>
+            </div>
+            <div class="project">
+                <div class="before-after">
+                    <div class="image-container">
+                        <button class="prev">&#10094;</button>
+                        <img src="./avant-après/Terrasse/avant-terrasse.jpg" alt="Avant">
+                        <img src="./avant-après/Terrasse/après-terrasse1.jpg" alt="Après">
+                        <img src="./avant-après/Terrasse/après-terrasse2.jpg" alt="Après">
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+                <h3>Création d'une terrasse en bois</h3>
+                <p>Construction d'une terrasse en bois avec des plantations décoratives.</p>
+            </div>
+            <!-- Ajouter plus de projets ici -->
+        </div>
+    </section>
+    
+    
+    
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Pour toute demande de renseignements ou de devis, veuillez nous contacter via le formulaire ci-dessous :</p>
+        <form action="submit_form.php" method="post">
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 LP Paysages. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

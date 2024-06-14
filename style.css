@@ -1,0 +1,248 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('./avant-après/Piscine/après-piscine2.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le header */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche l'image de se répéter */
+    padding: 20px; /* Ajoute un peu de padding pour éviter que le contenu ne soit trop proche du bord */
+    color: white; /* Couleur du texte */
+    text-align: center; /* Centre le texte horizontalement */
+    height: 400px;
+}
+
+/* Style supplémentaire pour le logo */
+.logo {
+    max-width: 100px; /* Ajuste la taille maximale du logo */
+    margin-top: 10px; /* Ajoute un espace au-dessus du logo */
+}
+
+/* Style pour le menu de navigation */
+nav ul {
+    list-style-type: none; /* Supprime les puces de la liste */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Affiche les éléments de la liste en ligne */
+    margin: 0 10px; /* Ajoute un espacement entre les éléments du menu */
+}
+
+nav ul li a {
+    color: white; /* Couleur du texte des liens */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol des liens */
+}
+
+/* Main section styles */
+section {
+    padding: 50px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+section h1, section h2, section h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Projects section */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: calc(50% - 20px);
+    margin: 10px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Assure que les projets sont en colonne */
+}
+
+.project h3 {
+    margin-top: 10px;
+}
+
+.project p {
+    color: #777;
+}
+
+.before-after {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Ajuste la hauteur pour remplir l'espace disponible */
+}
+
+.before-after .image-container {
+    display: flex;
+    justify-content: space-between; /* Ajuste l'espacement horizontal */
+    align-items: center; /* Centre les images verticalement */
+    height: 100%; /* Remplit la hauteur du parent (ici .before-after) */
+}
+
+.before-after .image-container img {
+    max-width: 100%; /* Limite la largeur de l'image à 100% du conteneur */
+    height: auto; /* Pour conserver le ratio d'aspect */
+    border-radius: 5px;
+}
+
+.project {
+    position: relative; /* Position relative pour le positionnement absolu des boutons */
+    margin-bottom: 30px; /* Espacement entre les projets */
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* ou "cover" selon votre besoin */
+}
+
+
+
+.image-container button {
+    position: absolute; /* Position absolue pour les boutons */
+    top: 50%; /* Alignement au centre vertical */
+    transform: translateY(-50%); /* Ajustement pour centrer parfaitement */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent noir */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    padding: 10px 15px; /* Espacement intérieur des boutons */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 18px; /* Taille de police */
+    outline: none; /* Supprimer l'outline par défaut */
+}
+
+.image-container .prev {
+    left: 10px; /* Position à gauche */
+}
+
+.image-container .next {
+    right: 10px; /* Position à droite */
+}
+
+.image-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Effet au survol */
+}
+
+
+/* Form section */
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-size: 18px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin: 10px 0 0 20px;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .before-after .image-container {
+        flex-direction: column; /* Pour une disposition en colonne sur les petits écrans */
+    }
+}
