@@ -1,248 +1,238 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Body styles */
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Ajout pour éviter les débordements horizontaux */
 }
 
-/* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('./avant-après/Piscine/après-piscine2.jpg'); /* Remplacez par le chemin de votre image */
-    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le header */
-    background-position: center; /* Centre l'image horizontalement et verticalement */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    padding: 20px; /* Ajoute un peu de padding pour éviter que le contenu ne soit trop proche du bord */
-    color: white; /* Couleur du texte */
-    text-align: center; /* Centre le texte horizontalement */
-    height: 400px;
+    background: #96BB99;
+    color: white;
+    padding: 10px 0;
 }
 
-/* Style supplémentaire pour le logo */
-.logo {
-    max-width: 100px; /* Ajuste la taille maximale du logo */
-    margin-top: 10px; /* Ajoute un espace au-dessus du logo */
+header .logo {
+    max-width: 150px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
 }
 
-/* Style pour le menu de navigation */
 nav ul {
-    list-style-type: none; /* Supprime les puces de la liste */
+    list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
-    display: inline; /* Affiche les éléments de la liste en ligne */
-    margin: 0 10px; /* Ajoute un espacement entre les éléments du menu */
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white; /* Couleur du texte des liens */
-    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Ajoute un soulignement au survol des liens */
+    text-decoration: underline;
 }
 
-/* Main section styles */
-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    margin-bottom: 20px;
-}
-
-section h1, section h2, section h3 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-section p {
-    margin-bottom: 10px;
-    color: #666;
-}
-
-/* Projects section */
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.project {
-    width: calc(50% - 20px);
-    margin: 10px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Assure que les projets sont en colonne */
-}
-
-.project h3 {
-    margin-top: 10px;
-}
-
-.project p {
-    color: #777;
-}
-
-.before-after {
+/* Carrousel Styles */
+.carousel {
     position: relative;
+    width: 100vw; /* Utilisation de la largeur totale de la fenêtre */
     overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    flex-grow: 1; /* Ajuste la hauteur pour remplir l'espace disponible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow */
 }
 
-.before-after .image-container {
+.carousel-inner {
     display: flex;
-    justify-content: space-between; /* Ajuste l'espacement horizontal */
-    align-items: center; /* Centre les images verticalement */
-    height: 100%; /* Remplit la hauteur du parent (ici .before-after) */
+    transition: transform 0.5s ease-in-out;
 }
 
-.before-after .image-container img {
-    max-width: 100%; /* Limite la largeur de l'image à 100% du conteneur */
-    height: auto; /* Pour conserver le ratio d'aspect */
-    border-radius: 5px;
-}
-
-.project {
-    position: relative; /* Position relative pour le positionnement absolu des boutons */
-    margin-bottom: 30px; /* Espacement entre les projets */
-}
-
-.image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px; /* Ajustez la hauteur selon vos besoins */
-    overflow: hidden;
-}
-
-.image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* ou "cover" selon votre besoin */
-}
-
-
-
-.image-container button {
-    position: absolute; /* Position absolue pour les boutons */
-    top: 50%; /* Alignement au centre vertical */
-    transform: translateY(-50%); /* Ajustement pour centrer parfaitement */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent noir */
-    color: white; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    padding: 10px 15px; /* Espacement intérieur des boutons */
-    cursor: pointer; /* Curseur pointeur */
-    font-size: 18px; /* Taille de police */
-    outline: none; /* Supprimer l'outline par défaut */
-}
-
-.image-container .prev {
-    left: 10px; /* Position à gauche */
-}
-
-.image-container .next {
-    right: 10px; /* Position à droite */
-}
-
-.image-container button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Effet au survol */
-}
-
-
-/* Form section */
-form {
-    display: grid;
-    gap: 10px;
-}
-
-label {
-    font-size: 18px;
-    color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.carousel-item {
+    min-width: 100vw; /* Utilisation de la largeur totale de la fenêtre */
     box-sizing: border-box;
 }
 
-textarea {
-    resize: vertical;
-    height: 150px;
-}
-
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+.carousel-item img {
     width: 100%;
+    height: auto;
+    max-height: 500px; /* Max height of the images */
+    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+    display: block;
 }
 
-footer p {
-    margin: 0;
-    font-size: 14px;
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.5); /* Background for better visibility */
+    border-radius: 50%; /* Optional: for rounded controls */
 }
 
-/* Responsive styles */
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card h3 {
+    color: #333;
+    margin: 15px 0;
+}
+
+.card p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+.project{
+    background: #D65934;
+}
+
+#contact {
+    background: #BC9446;
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+    .carousel-control {
+        font-size: 20px;
     }
+    
+    .carousel-item img {
+        max-height: 300px; /* Adjust max height for smaller screens */
+    }
+}
 
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #0a410da1;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+
+section#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section#contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+section#contact input, 
+section#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+section#contact button {
+    background: #0a410da1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+section#contact button:hover {
+    background: #0a410da1;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
     header .logo {
-        margin: 10px 0 0 20px;
+        max-width: 100px;
     }
 
-    header nav ul {
-        margin-top: 10px;
+    section#contact form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    header .logo {
+        max-width: 80px;
     }
 
-    .project {
-        width: 100%;
-    }
-
-    .before-after .image-container {
-        flex-direction: column; /* Pour une disposition en colonne sur les petits écrans */
+    section#contact input, 
+    section#contact textarea {
+        font-size: 14px;
     }
 }
