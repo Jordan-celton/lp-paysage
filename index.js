@@ -8,3 +8,8 @@ function moveSlide(direction) {
     currentSlide * 100
   }%)`;
 }
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("click", () => {
+    window.location.href = card.closest("a").href;
+  });
+});

@@ -100,16 +100,24 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+.card-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin: 20px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    height: 100%; /* Assure que toutes les cartes aient la même hauteur */
 }
 
 .card:hover {
@@ -129,10 +137,12 @@ nav ul li a:hover {
 }
 
 .card p {
+    flex-grow: 1;
     padding: 0 15px 15px;
     color: #666;
 }
-.project{
+
+#projets {
     background: #D65934;
 }
 
@@ -162,7 +172,6 @@ h1, h2 {
 section {
     margin-bottom: 40px;
 }
-
 
 section#contact form {
     max-width: 600px;
@@ -200,7 +209,6 @@ footer {
     background: #333;
     color: white;
     text-align: center;
-    
     position: fixed;
     width: 100%;
     bottom: 0;
