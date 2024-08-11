@@ -72,3 +72,11 @@ h2 {
     height: auto;
     display: block;
 }
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
