@@ -9,6 +9,9 @@ body {
     color: #333;
     overflow-x: hidden; /* Ajout pour éviter les débordements horizontaux */
 }
+h1, h2 {
+    margin: 10px;
+}
 
 header {
     background: #96BB99;
@@ -80,7 +83,6 @@ nav ul li a:hover {
     padding: 10px;
     cursor: pointer;
     user-select: none;
-    background: rgba(0, 0, 0, 0.5); /* Background for better visibility */
     border-radius: 50%; /* Optional: for rounded controls */
 }
 
@@ -141,6 +143,9 @@ nav ul li a:hover {
     padding: 0 15px 15px;
     color: #666;
 }
+#accueil p {
+    margin: 10px;
+}
 
 #projets {
     background: #e968418a;
@@ -148,6 +153,9 @@ nav ul li a:hover {
 
 #contact {
     background: #bc9546a9;
+}
+#contact p {
+    margin: 10px;
 }
 
 /* Responsiveness */
