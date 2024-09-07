@@ -1,110 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LP Paysages offre des services de création et d'aménagement extérieur pour réaliser le jardin de vos rêves.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LP Paysages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <img class="logo" src="logo.png" alt="logo LP Paysages">
         <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#projets">Réalisations</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#creation">Créations</a></li>
+            <ul class="nav-links">
+                <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#projets"><i class="fas fa-briefcase"></i> Réalisations</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                
             </ul>
         </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </header>
 
-    <!-- Carrousel -->
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./photos/Piscine/après-piscine2.jpg" alt="Image 1">
-            </div>
-            <div class="carousel-item">
-                <img src="./photos/Terrasse/terrasse 1.jpg" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-                <img src="./photos/Aménagement extérieur/amenagement 2.jpg" alt="Image 3">
-            </div>
-            <!-- Ajout d'autres éléments de carrousel ici -->
-        </div>
-        <a class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="carousel-control next" onclick="moveSlide(1)">&#10095;</a>
+<section id="accueil">
+    <div class="hero-content">
+        <h1>Bienvenue à LP Paysages</h1>
+        <p>Transformez votre espace extérieur avec nos solutions paysagères sur mesure.</p>
+        <a href="#contact" class="cta-button">Contactez-nous</a>
     </div>
+</section>
 
-    <main>
-        <section id="accueil">
-            <h1>LP Paysages</h1>
-            <p>LP Paysages vous propose ses services pour toutes créations et aménagements extérieurs.</p>
-            <p>Vous souhaitez réaliser le jardin de vos rêves ? Vous ne savez pas par où commencer et le budget nécessaire?</p>
-            <p>Nous sommes là pour ça alors n'hésitez pas à nous contacter pour toutes consultations techniques.</p>
-            <p>Nous serons ravis de vous répondre et d'apporter plus d'expertise à votre projet.</p>
-        </section>
-        
-        <section id="projets">
-            <h2>Réalisations</h2>
-            <div class="card-container">
-                <a href="./pages/terrasses.html">
-                    <div class="card">
-                        <img src="./photos/Piscine/après-piscine3.jpg" alt="Terrasse">
-                        <h3>Terrasses</h3>
-                        <p>Description de la réalisation des terrasses.</p>
-                    </div>
-                </a>
-                <a href="./pages/exterieur.html">
-                    <div class="card">
-                        <img src="./photos/Aménagement extérieur/amenagement 1.jpg" alt="Aménagement extérieur">
-                        <h3>Aménagements extérieurs</h3>
-                        <p>Description de l'aménagement extérieur.</p>
-                    </div>
-                </a>
-                <a href="./pages/clotures.html">
-                    <div class="card">
-                        <img src="./photos/Clotûres/cloture 1.jpg" alt="Clôtures">
-                        <h3>Clôtures</h3>
-                        <p>Description des clôtures.</p>
-                    </div>
-                </a>
-                <a href="./pages/maconnerie.html">
-                    <div class="card">
-                        <img src="./photos/Murs/mur 1.jpg" alt="Murs">
-                        <h3>Maçonneries</h3>
-                        <p>Description des murs.</p>
-                    </div>
-                </a>
+<section id="projets">
+    <h2>Réalisations</h2>
+    <div class="card-container">
+        <a href="./pages/terrasses.html">
+            <div class="card">
+                <img src="./photos/Piscine/après-piscine3.jpg" alt="Terrasse">
+                <h3>Terrasses</h3>
+                <p>Description de la réalisation des terrasses.</p>
             </div>
-        </section>
+        </a>
+        <a href="./pages/exterieur.html">
+            <div class="card">
+                <img src="./photos/Aménagement extérieur/amenagement 1.jpg" alt="Aménagement extérieur">
+                <h3>Aménagements extérieurs</h3>
+                <p>Description de l'aménagement extérieur.</p>
+            </div>
+        </a>
+        <a href="./pages/clotures.html">
+            <div class="card">
+                <img src="./photos/Clotûres/cloture 1.jpg" alt="Clôtures">
+                <h3>Clôtures</h3>
+                <p>Description des clôtures.</p>
+            </div>
+        </a>
+        <a href="./pages/maconnerie.html">
+            <div class="card">
+                <img src="./photos/Murs/mur 1.jpg" alt="Murs">
+                <h3>Maçonneries</h3>
+                <p>Description des murs.</p>
+            </div>
+        </a>
+    </div>
+</section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Pour toute demande de renseignements ou de devis, veuillez nous contacter via le formulaire ci-dessous :</p>
-            <form action="mailto:perennecludovic@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-        <section class="partenaires">
-            <h2>Nos partenaires</h2>
-        </section>
-      
-    </main>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute demande de renseignements ou de devis, veuillez nous contacter via le formulaire ci-dessous :</p>
+    <form action="mailto:celton.jordan@outlook.fr" method="post" enctype="text/plain">
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" aria-label="Nom" required>
 
-    <footer>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" aria-label="Email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" aria-label="Message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <div class="footer-content">
         <p>&copy; 2024 LP Paysages. Tous droits réservés.</p>
-    </footer>
+        <ul class="socials">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+    </div>
+</footer>
 
-    <script src="index.js"></script>
 </body>
+
 </html>

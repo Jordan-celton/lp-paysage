@@ -1,40 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez les clôtures réalisées par LP Paysages autour de Quimper. Nous proposons des solutions sur mesure pour tous vos projets paysagers.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clôtures - LP Paysages</title>
+
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <link rel="stylesheet" href="/styles/clotures.css">
-    <title>Document</title>
+    <script defer src="/scripts/form-validation.js"></script>
+    <script defer src="/scripts/animations.js"></script>
 </head>
+
 <body>
     <header>
-        <img class="logo" src="/logo.png" alt="logo LP Paysages">
+        <a href="/index.html" aria-label="Retour à l'accueil">
+            <img class="logo" src="/logo.png" alt="Logo de LP Paysages" />
+        </a>
         <nav>
-            <ul>
-                <li><a href="/index.html">Accueil</a></li>
-                <li><a href="/index.html#projets">Réalisations</a></li>
-                <li><a href="/index.html#contact">Contact</a></li>
-                <li><a href="/index.html#creation">Créations</a></li>
+            <ul class="nav-links" role="navigation" aria-label="Navigation principale">
+                <li><a href="/index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="/index.html#projets"><i class="fas fa-briefcase"></i> Réalisations</a></li>
+                <li><a href="/index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
+        <button class="burger" aria-label="Ouvrir le menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
     </header>
-    <section>
-        <h1>LP Paysages</h1>
-        <p>Voici quelques réalisations faites à ... autour de Quimper</p>
-    </section>
-    <section>
-        <h2>Clôtures</h2>
-        <div class="grid-container">
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 1.jpg" alt="exterieur 1"></div>
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 2.jpg" alt="exterieur 2"></div>
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 8.jpg" alt="exterieur 3"></div>
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 4.jpg" alt="exterieur 4"></div>
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 5.jpg" alt="exterieur 5"></div>
-            <div class="grid-item"><img src="/photos/Clotûres/cloture 6.jpg" alt="exterieur 6"></div>
-        </div>
-    </section>
+
+    <main>
+        <section id="intro">
+            <h1>LP Paysages - Clôtures</h1>
+            <p>Voici quelques réalisations de clôtures faites autour de Quimper.</p>
+        </section>
+
+        <section id="clotures">
+            <h2>Nos Clôtures Réalisées</h2>
+            <div class="grid-container">
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 1.jpg" alt="Clôture en bois moderne"
+                        loading="lazy" /></div>
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 2.jpg" alt="Clôture en métal design"
+                        loading="lazy" /></div>
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 3.jpg"
+                        alt="Clôture avec grillage et végétation" loading="lazy" /></div>
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 4.jpg" alt="Clôture en PVC avec portail"
+                        loading="lazy" /></div>
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 5.jpg" alt="Clôture en pierre naturelle"
+                        loading="lazy" /></div>
+                <div class="grid-item"><img src="/photos/Clotûres/cloture 6.jpg" alt="Clôture moderne en bois composite"
+                        loading="lazy" /></div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2024 LP Paysages. Tous droits réservés.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 LP Paysages. Tous droits réservés.</p>
+            <ul class="socials" aria-label="Réseaux sociaux">
+                <li><a href="https://facebook.com" title="Visitez notre page Facebook" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com" title="Visitez notre page Twitter" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a></li>
+                <li><a href="https://instagram.com" title="Visitez notre page Instagram" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com" title="Visitez notre page LinkedIn" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
     </footer>
 </body>
+
 </html>

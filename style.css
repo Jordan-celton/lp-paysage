@@ -1,248 +1,437 @@
-/* Importation des polices */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* Global settings */
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #333;
-    overflow-x: hidden; /* Ajout pour éviter les débordements horizontaux */
-}
-h1, h2 {
-    margin: 10px;
 }
 
+/* Header styles */
 header {
-    background: #96BB99;
+    background: linear-gradient(135deg, #96BB99, #76A779);
     color: white;
-    padding: 10px 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease-in-out;
+}
+
+header:hover {
+    background: linear-gradient(135deg, #76A779, #96BB99);
 }
 
 header .logo {
     max-width: 150px;
-    margin: 0 auto;
-    display: block;
     border-radius: 50%;
 }
 
+/* Navigation styles */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    position: relative;
+    /* Ajoutez cette ligne */
 }
 
 nav ul li a {
+    display: flex;
+    align-items: center;
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Carrousel Styles */
-.carousel {
-    position: relative;
-    width: 100vw; /* Utilisation de la largeur totale de la fenêtre */
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow */
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100vw; /* Utilisation de la largeur totale de la fenêtre */
-    box-sizing: border-box;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    max-height: 500px; /* Max height of the images */
-    object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-    display: block;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
     padding: 10px;
+    position: relative;
+    /* Ajoutez cette ligne */
+    transition: color 0.4s ease;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    /* Ajustez cette valeur pour placer la ligne sous le texte */
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+/* Styles for burger menu */
+.burger {
+    display: none;
     cursor: pointer;
-    user-select: none;
-    border-radius: 50%; /* Optional: for rounded controls */
+    flex-direction: column;
+    gap: 5px;
 }
 
-.carousel-control.prev {
-    left: 10px;
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
 }
 
-.carousel-control.next {
-    right: 10px;
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #76A779;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    nav ul.nav-active {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        opacity: 0;
+        animation: navLinkFade 0.5s ease forwards;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    #contact h2,
+    #projets h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 0 20px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        font-size: 1rem;
+    }
+
+    .socials li a {
+        font-size: 1.3rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Keyframes */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section styles */
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+section#accueil {
+    background: #f4f4f4;
+}
+
+section#projets,
+section#contact {
+    background: #e9e9e9;
+}
+
+/* Section projets */
+#projets {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#projets h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Conteneur des cartes */
 .card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Style des cartes */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    /* Coins arrondis pour un effet plus doux */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre plus douce */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    /* Centre le texte horizontalement */
+    height: 350px;
+    /* Hauteur ajustée pour des cartes plus petites */
+    border: 1px solid #ddd;
+    /* Bordure subtile */
+    position: relative;
+    /* Positionnement relatif pour l'alignement absolu des éléments */
+}
+
+/* Image de la carte */
+.card img {
+    width: 100%;
+    height: 200px;
+    /* Hauteur fixe pour les images */
+    object-fit: cover;
+    /* Assure que les images couvrent la zone sans déformation */
+    transition: transform 0.3s ease;
+}
+
+/* Contenu de la carte */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    /* Plus d'espace autour du contenu */
+}
+
+/* Titre de la carte */
+.card h3 {
+    font-size: 1.75rem;
+    /* Taille de police augmentée */
+    color: #333;
+    margin: 0;
+    margin-bottom: 10px;
+    /* Espacement inférieur */
+    font-weight: 600;
+    /* Poids de police plus audacieux */
+}
+
+/* Description de la carte */
+.card p {
+    color: #777;
+    font-size: 1.1rem;
+    /* Taille de police légèrement augmentée */
+    margin-top: auto;
+    /* Assure que la description est en bas de la carte */
+    margin-left: 10px;
+    line-height: 1.5;
+    /* Espacement des lignes pour une meilleure lisibilité */
+}
+
+/* Effet au survol */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    /* Ombre plus prononcée */
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    /* Zoom plus important au survol */
+}
+
+/* Liens des cartes */
 .card-container a {
     text-decoration: none;
     color: inherit;
 }
-
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    height: 100%; /* Assure que toutes les cartes aient la même hauteur */
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.card h3 {
-    color: #333;
-    margin: 15px 0;
-}
-
-.card p {
-    flex-grow: 1;
-    padding: 0 15px 15px;
-    color: #666;
-}
-#accueil p {
-    margin: 10px;
-}
-
-#projets {
-    background: #e968418a;
-}
-
+/* Section Contact */
 #contact {
-    background: #bc9546a9;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
 }
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
 #contact p {
-    margin: 10px;
+    color: #777;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .carousel-control {
-        font-size: 20px;
-    }
-    
-    .carousel-item img {
-        max-height: 300px; /* Adjust max height for smaller screens */
-    }
-}
-
-
-h1, h2 {
-    color: #0a410da1;
-}
-
-
-section#contact form {
+/* Formulaire */
+form {
     max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-section#contact label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-section#contact input, 
-section#contact textarea {
-    width: 100%;
-    padding: 10px;
+form label {
+    align-self: flex-start;
+    font-weight: bold;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    color: #333;
 }
 
-section#contact button {
-    background: #0a410da1;
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #76A779;
+    outline: none;
+}
+
+/* Textarea styling */
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Bouton */
+form button {
+    padding: 15px 30px;
+    background-color: #76A779;
     color: white;
     border: none;
-    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-section#contact button:hover {
-    background: #0a410da1;
+form button:hover {
+    background-color: #609f65;
 }
 
+/* Footer styles */
 footer {
-    background: #333;
+    background-color: #333;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    width: 100%;
-    bottom: 0;
-    height: 50px;
 }
 
-/* Responsiveness */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* Social media icons */
+.socials {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials li a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.socials li a:hover {
+    color: #76A779;
+}
+
+/* Responsive footer */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    
-    header .logo {
-        max-width: 100px;
+    footer p {
+        font-size: 0.9rem;
     }
 
-    section#contact form {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-    
-    header .logo {
-        max-width: 80px;
-    }
-
-    section#contact input, 
-    section#contact textarea {
-        font-size: 14px;
+    .socials li a {
+        font-size: 1.3rem;
     }
 }
