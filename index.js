@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Burger Menu Toggle
   const burger = document.querySelector(".burger");
-  const navLinks = document.querySelector(".nav-links");
+  const navLinks = document.querySelector("nav ul");
 
   if (burger && navLinks) {
     burger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+      navLinks.classList.toggle("nav-active");
       burger.classList.toggle("toggle");
     });
   }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Form Validation and Confirmation
-  const contactForm = document.getElementById("contact-form");
+  const contactForm = document.querySelector("form");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();

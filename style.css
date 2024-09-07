@@ -14,7 +14,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -30,12 +29,14 @@ header .logo {
     border-radius: 50%;
 }
 
-/* Navigation styles */
+nav {
+    flex: 1;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    width: 50%;
     margin: 0;
     padding: 0;
 }
@@ -43,7 +44,6 @@ nav ul {
 nav ul li {
     margin: 0 15px;
     position: relative;
-    /* Ajoutez cette ligne */
 }
 
 nav ul li a {
@@ -54,7 +54,6 @@ nav ul li a {
     font-weight: bold;
     padding: 10px;
     position: relative;
-    /* Ajoutez cette ligne */
     transition: color 0.4s ease;
 }
 
@@ -69,7 +68,6 @@ nav ul li a::before {
     width: 100%;
     height: 3px;
     bottom: -3px;
-    /* Ajustez cette valeur pour placer la ligne sous le texte */
     left: 0;
     background-color: white;
     visibility: hidden;
@@ -81,7 +79,6 @@ nav ul li a:hover::before {
     visibility: visible;
     transform: scaleX(1);
 }
-
 
 /* Styles for burger menu */
 .burger {
@@ -110,13 +107,374 @@ nav ul li a:hover::before {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Responsive Design */
+/* Section styles */
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+/* Section Accueil */
+section#accueil {
+    background: #f4f4f4;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #76A779;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #609f65;
+}
+
+/* Section Services */
+#services {
+    padding: 60px 20px;
+    background-color: #e9e9e9;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service i {
+    font-size: 2.5rem;
+    color: #76A779;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 1.75rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.service p {
+    color: #777;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Effet au survol des services */
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Section À Propos */
+#a-propos {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+#a-propos h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#a-propos p {
+    color: #777;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Section Réalisations */
+#projets {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+#projets h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Conteneur des cartes */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style des cartes */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 350px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 1.75rem;
+    color: #333;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card p {
+    color: #777;
+    font-size: 1.1rem;
+    margin-top: auto;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Section Témoignages */
+#temoignages {
+    padding: 60px 20px;
+    background-color: #e9e9e9;
+}
+
+#temoignages h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Section Contact */
+#contact {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #76A779;
+    outline: none;
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form button {
+    padding: 15px 30px;
+    background-color: #76A779;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #609f65;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* Social media icons */
+.socials {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials li a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.socials li a:hover {
+    color: #76A779;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
     nav ul {
         position: absolute;
+        top: 60px;
         right: 0;
-        height: 100vh;
-        top: 0;
+        height: calc(100vh - 60px);
         background-color: #76A779;
         display: flex;
         flex-direction: column;
@@ -184,254 +542,5 @@ nav ul li a:hover::before {
     to {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-/* Section styles */
-section {
-    padding: 60px;
-    text-align: center;
-}
-
-section#accueil {
-    background: #f4f4f4;
-}
-
-section#projets,
-section#contact {
-    background: #e9e9e9;
-}
-
-/* Section projets */
-#projets {
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#projets h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-/* Conteneur des cartes */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Style des cartes */
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 15px;
-    /* Coins arrondis pour un effet plus doux */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Ombre plus douce */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    /* Centre le texte horizontalement */
-    height: 350px;
-    /* Hauteur ajustée pour des cartes plus petites */
-    border: 1px solid #ddd;
-    /* Bordure subtile */
-    position: relative;
-    /* Positionnement relatif pour l'alignement absolu des éléments */
-}
-
-/* Image de la carte */
-.card img {
-    width: 100%;
-    height: 200px;
-    /* Hauteur fixe pour les images */
-    object-fit: cover;
-    /* Assure que les images couvrent la zone sans déformation */
-    transition: transform 0.3s ease;
-}
-
-/* Contenu de la carte */
-.card-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 20px;
-    /* Plus d'espace autour du contenu */
-}
-
-/* Titre de la carte */
-.card h3 {
-    font-size: 1.75rem;
-    /* Taille de police augmentée */
-    color: #333;
-    margin: 0;
-    margin-bottom: 10px;
-    /* Espacement inférieur */
-    font-weight: 600;
-    /* Poids de police plus audacieux */
-}
-
-/* Description de la carte */
-.card p {
-    color: #777;
-    font-size: 1.1rem;
-    /* Taille de police légèrement augmentée */
-    margin-top: auto;
-    /* Assure que la description est en bas de la carte */
-    margin-left: 10px;
-    line-height: 1.5;
-    /* Espacement des lignes pour une meilleure lisibilité */
-}
-
-/* Effet au survol */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    /* Ombre plus prononcée */
-}
-
-.card:hover img {
-    transform: scale(1.1);
-    /* Zoom plus important au survol */
-}
-
-/* Liens des cartes */
-.card-container a {
-    text-decoration: none;
-    color: inherit;
-}
-/* Section Contact */
-#contact {
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#contact p {
-    color: #777;
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Formulaire */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form label {
-    align-self: flex-start;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    transition: border-color 0.3s ease;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: #76A779;
-    outline: none;
-}
-
-/* Textarea styling */
-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Bouton */
-form button {
-    padding: 15px 30px;
-    background-color: #76A779;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #609f65;
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-footer p {
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-/* Social media icons */
-.socials {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.socials li {
-    margin: 0 10px;
-}
-
-.socials li a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.socials li a:hover {
-    color: #76A779;
-}
-
-/* Responsive footer */
-@media (max-width: 768px) {
-    footer p {
-        font-size: 0.9rem;
-    }
-
-    .socials li a {
-        font-size: 1.3rem;
     }
 }
