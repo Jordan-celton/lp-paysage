@@ -40,14 +40,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // Chatbot Toggle
-  const chatbotButton = document.getElementById("chatbot-button");
-  const chatbotWindow = document.getElementById("chatbot-window");
-
-  if (chatbotButton && chatbotWindow) {
-    chatbotButton.addEventListener("click", () => {
-      chatbotWindow.classList.toggle("hidden");
-    });
-  }
 });

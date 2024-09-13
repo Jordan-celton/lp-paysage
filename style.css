@@ -9,6 +9,7 @@ body {
 /* Header styles */
 header {
     background: linear-gradient(135deg, #96BB99, #76A779);
+        /* Vert végétal */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -115,12 +116,17 @@ section {
 
 /* Section Accueil */
 section#accueil {
-    background: #f4f4f4;
+    background: url('/photos/Piscine/après-piscine2.jpg') no-repeat center center/cover;
+    background-color: #f4f4f4;
+    color: white;
+    height: 300px;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
+    /* Centrer le contenu */
 }
 
 .hero-content h1 {
@@ -130,7 +136,8 @@ section#accueil {
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #777;
+    color: #fff;
+    /* Texte en blanc pour contraster avec l'image */
     margin-bottom: 20px;
 }
 
@@ -153,7 +160,8 @@ section#accueil {
 /* Section Services */
 #services {
     padding: 60px 20px;
-    background-color: #e9e9e9;
+    background-color: #D9CAB3;
+        /* Beige inspiré de la terre */
 }
 
 #services h2 {
@@ -207,32 +215,100 @@ section#accueil {
 /* Section À Propos */
 #a-propos {
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
+    /* Gris clair pour le thème paysagiste */
 }
 
 #a-propos h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-#a-propos p {
+.a-propos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Centrer le texte dans le conteneur */
+    margin-bottom: 40px;
+    /* Espacement sous le conteneur principal */
+}
+
+.a-propos-texte {
+    max-width: 800px;
     color: #777;
     font-size: 1.2rem;
-    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    /* Fond blanc pour mieux se démarquer */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre douce pour une séparation visuelle */
+}
+
+.a-propos-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    /* Bordure légère autour de l'image */
+}
+
+.valeurs,
+.services {
     max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Ombre douce pour une séparation visuelle */
+}
+
+.valeurs h3,
+.services h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    /* Bordure sous le titre pour plus de séparation */
+    padding-bottom: 10px;
+    /* Espacement sous le titre */
+}
+
+.valeurs ul,
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.valeurs ul li,
+.services ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.valeurs ul li strong {
+    color: #333;
 }
 
 /* Section Réalisations */
 #projets {
     padding: 40px 20px;
-    background-color: #f4f4f4;
+    background-color: #e0f7df;
+        /* Un vert doux pour le lien avec la nature */
+    
 }
 
 #projets h2 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 /* Conteneur des cartes */
@@ -254,7 +330,7 @@ section#accueil {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    height: 350px;
+    height: 510px;
 }
 
 .card img {
@@ -282,9 +358,25 @@ section#accueil {
 .card p {
     color: #777;
     font-size: 1.1rem;
-    margin-top: auto;
-    margin-left: 10px;
+    margin: 10px 0;
     line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* CTA button */
+.cta-button {
+    margin-top: auto;
+    padding: 10px 15px;
+    background-color: #F7A072;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
 }
 
 .card:hover {
@@ -304,7 +396,8 @@ section#accueil {
 /* Section Témoignages */
 #temoignages {
     padding: 60px 20px;
-    background-color: #e9e9e9;
+    background-color: #F5DEB3;
+    /* Beige sable pour un effet chaleureux */
 }
 
 #temoignages h2 {
@@ -344,7 +437,6 @@ section#accueil {
 /* Section Contact */
 #contact {
     padding: 40px 20px;
-    background-color: #f4f4f4;
     text-align: center;
 }
 
@@ -461,29 +553,31 @@ footer p {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     header .logo {
         margin-bottom: 10px;
     }
 
-    nav ul {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        height: calc(100vh - 60px);
-        background-color: #76A779;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
+        nav ul {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: calc(100vh - 60px);
+            background-color: rgba(118, 167, 121, 0.9);
+            /* Vert avec opacité à 90% */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
 
     nav ul.nav-active {
         transform: translateX(0);
