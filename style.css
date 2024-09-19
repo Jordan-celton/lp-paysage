@@ -328,7 +328,7 @@ section#accueil {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: lightgray;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   /* Ombre douce pour une séparation visuelle */
@@ -365,8 +365,6 @@ section#accueil {
 /* Section Réalisations */
 #projets {
   padding: 40px 20px;
-  background-color: #e0f7df;
-  /* Un vert doux pour le lien avec la nature */
 }
 
 #projets h2 {
@@ -531,13 +529,14 @@ form label {
   font-size: 1.1rem;
   margin-bottom: 5px;
   color: #333;
+  padding-top: 10px;
 }
 
 form input[type="text"],
 form input[type="email"],
 form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -567,6 +566,7 @@ form button {
   font-size: 1.1rem;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 form button:hover {
@@ -646,6 +646,7 @@ footer p {
 
   nav ul.nav-active {
     transform: translateX(0);
+    z-index: 1000;
   }
 
   nav ul li {
@@ -661,6 +662,11 @@ footer p {
 
   .burger {
     display: flex;
+    z-index: 1000;
+  }
+  .hero-content {
+    position: absolute;
+    bottom: 35px;
   }
 
   .card-container {
@@ -672,23 +678,49 @@ footer p {
     font-size: 2rem;
   }
 
+  #contact p {
+    font-size: 1rem;
+  }
+
   form {
-    padding: 0 20px;
+    padding: 15px;
+  }
+
+  form label {
+    font-size: 1rem;
+    padding-top: 10px;
   }
 
   form input[type="text"],
   form input[type="email"],
   form textarea {
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+
+  form button {
+    padding: 12px 20px;
     font-size: 1rem;
+    margin: 15px;
   }
+}
 
-  .socials li a {
-    font-size: 1.3rem;
-  }
+form {
+  padding: 0 20px;
+}
 
-  footer p {
-    font-size: 0.8rem;
-  }
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  font-size: 1rem;
+}
+
+.socials li a {
+  font-size: 1.3rem;
+}
+
+footer p {
+  font-size: 0.8rem;
 }
 
 /* Keyframes */
