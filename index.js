@@ -41,3 +41,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+var swiper = new Swiper(".swiper-container", {
+  loop: true, // Permet un défilement en boucle
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true, // Pagination cliquable
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000, // Défiler automatiquement toutes les 3 secondes
+    disableOnInteraction: false,
+  },
+  effect: "fade", // Ajouter un effet de transition
+  fadeEffect: {
+    crossFade: true,
+  },
+});
