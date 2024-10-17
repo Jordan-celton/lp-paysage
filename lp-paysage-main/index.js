@@ -41,3 +41,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Fonction pour vérifier la visibilité des éléments
+function checkVisibility() {
+  const sections = document.querySelectorAll(".hidden"); // Sélectionne les éléments cachés
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top; // Position de l'élément
+
+    // Vérifie si le haut de la section est visible
+    if (sectionTop < window.innerHeight && sectionTop >= 0) {
+      if (!section.classList.contains("visible")) {
+        // Vérifie si déjà visible
+        setTimeout(() => {
+          section.classList.add("visible"); // Ajoute la classe visible
+          section.classList.remove("hidden"); // Enlève la classe hidden
+        }, 300); // Délai de 300 ms avant d'afficher la section
+      }
+    }
+  });
+}
+
+// Vérifie la visibilité lors du défilement
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      checkVisibility();
+      ticking = false; // Réinitialise le ticking
+    });
+    ticking = true; // Indique que la fonction est en cours d'exécution
+  }
+});
+
+// Vérifie la visibilité au chargement de la page
+document.addEventListener("DOMContentLoaded", checkVisibility);
